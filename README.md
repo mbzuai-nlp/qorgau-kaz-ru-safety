@@ -23,3 +23,19 @@ https://docs.google.com/document/d/1DMfnSBgLbSzhIfxSFlOJaI8QWTF09lJ2uxTECj9y648/
   **Fit Question type requirement**: we should make sure the annotated question still belongs to its question type (first column): original, task1-FN and task2-FP.
 
   During post-editing these questions, think about **what aspects are not included in current dataset, but they reflect region-specific sensitivity topics**, we will manually collect such questions in the next stage.
+
+
+## Dataset
+All data is saved in ```ru_kaz_data```
+
+- KAZ_RU Security Annotations.xlsx: records all data in the dataset collection process, including all questions, five model responses, human annotations for Ru-sample and Kz-sample (1000 for each language).
+- ru_kz_nine_model_responses.xlsx: all questions and responses of nine models
+- ru_kz_question_only.xlsx: questions only
+- eval_results: all input and output file of calling openai batch for automatically evaluating binary safety
+
+
+## Notebook and Code Description
+- ```evaluate_binary_safety.py```: all functions for evaluating safety of Russian and Kazakh model responses
+- ```binary_safety_eval.ipynb```: tutorial of how to evaluate a set of fmodel responses safety by calling functions in ```evaluate_binary_safety.py```.
+- ```eval_safety_for_nine_models.ipynb```: process of evaluating nine models
+- ```collect_ru_kz_model_response_1227.ipynb```: test code for collect our own Kz model responses
