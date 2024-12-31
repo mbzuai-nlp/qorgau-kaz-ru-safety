@@ -1,4 +1,5 @@
 .ipynb_checkpoints
+__pycache__
 openaikey.txt
 ru_kaz_data/open_source
 ru_kaz_data/private_result

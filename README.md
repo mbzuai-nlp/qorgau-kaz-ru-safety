@@ -36,6 +36,10 @@ All data is saved in ```ru_kaz_data```
 
 ## Notebook and Code Description
 - ```evaluate_binary_safety.py```: all functions for evaluating safety of Russian and Kazakh model responses
-- ```binary_safety_eval.ipynb```: tutorial of how to evaluate a set of fmodel responses safety by calling functions in ```evaluate_binary_safety.py```.
+- ```binary_safety_eval.ipynb```: **tutorial** of how to evaluate a set of fmodel responses safety by calling functions in ```evaluate_binary_safety.py```.
 - ```eval_safety_for_nine_models.ipynb```: process of evaluating nine models
 - ```collect_ru_kz_model_response_1227.ipynb```: test code for collect our own Kz model responses
+
+## Binary Safety Evaluation Results
+Current evaluation method achieved **88.1%** and **85.2%** accuracy for Russian and Kazakh binary safety evaluation. So we think it is reasonable to evaluate over all. Here is the results of nine models.
+![Nine Model Safety Rank](image.png)
