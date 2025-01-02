@@ -3,4 +3,5 @@ __pycache__
 openaikey.txt
 ru_kaz_data/open_source
 ru_kaz_data/private_result
+ru_kaz_data/small_public_models
 ru_kaz_data/eval_results/test

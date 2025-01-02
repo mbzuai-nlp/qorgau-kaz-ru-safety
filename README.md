@@ -29,7 +29,7 @@ https://docs.google.com/document/d/1DMfnSBgLbSzhIfxSFlOJaI8QWTF09lJ2uxTECj9y648/
 All data is saved in ```ru_kaz_data```
 
 - KAZ_RU Security Annotations.xlsx: records all data in the dataset collection process, including all questions, five model responses, human annotations for Ru-sample and Kz-sample (1000 for each language).
-- ru_kz_nine_model_responses.xlsx: all questions and responses of nine models
+- ru_kz_twelve_model_responses.xlsx: all questions and responses of 12 models
 - ru_kz_question_only.xlsx: questions only
 - eval_results: all input and output file of calling openai batch for automatically evaluating binary safety
 
@@ -42,4 +42,4 @@ All data is saved in ```ru_kaz_data```
 
 ## Binary Safety Evaluation Results
 Current evaluation method achieved **88.1%** and **85.2%** accuracy for Russian and Kazakh binary safety evaluation. So we think it is reasonable to evaluate over all. Here is the results of nine models.
-![Nine Model Safety Rank](image.png)
+![12 Model Safety Rank](image.png)
