@@ -30,6 +30,7 @@ All data is saved in ```ru_kaz_data```
 
 - KAZ_RU Security Annotations.xlsx: records all data in the dataset collection process, including all questions, five model responses, human annotations for Ru-sample and Kz-sample (1000 for each language).
 - ru_kz_twelve_model_responses.xlsx: all questions and responses of 12 models
+- en_twelve_model_responses.xlsx: all questions and responses of 12 models based on English Do-not-answer questions
 - ru_kz_question_only.xlsx: questions only
 - eval_results: all input and output file of calling openai batch for automatically evaluating binary safety
 
@@ -37,7 +38,8 @@ All data is saved in ```ru_kaz_data```
 ## Notebook and Code Description
 - ```evaluate_binary_safety.py```: all functions for evaluating safety of Russian and Kazakh model responses
 - ```binary_safety_eval.ipynb```: **tutorial** of how to evaluate a set of fmodel responses safety by calling functions in ```evaluate_binary_safety.py```.
-- ```eval_safety_for_nine_models.ipynb```: process of evaluating nine models
+- ```eval_safety_for_twelve_models.ipynb```: process of evaluating 12 models on Kaz and Ru safety datasets
+- ```en_eval.ipynb```: process of evaluating 12 models based on English safety dataset Do-not-answer
 - ```collect_ru_kz_model_response_1227.ipynb```: test code for collect our own Kz model responses
 
 ## Binary Safety Evaluation Results
