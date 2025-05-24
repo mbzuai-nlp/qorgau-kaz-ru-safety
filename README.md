@@ -1,30 +1,31 @@
-# KAZ-RU-Safety
-Kazakh and Russian LLM safety dataset
+# Qorgau: Evaluating LLM Safety in Kazakh-Russian Bilingual Contexts
 
-# Project Plan
-https://docs.google.com/document/d/1DMfnSBgLbSzhIfxSFlOJaI8QWTF09lJ2uxTECj9y648/edit
+Qorgau (Қорғау, meaning "to protect" in Kazakh) is a benchmark designed to assess the safety of large language models (LLMs) within Kazakhstan's unique bilingual environment, where both Kazakh (a low-resource language) and Russian (a high-resource language) are widely spoken. This project introduces a culturally and legally sensitive dataset tailored for evaluating LLMs' behavior in the region.
+
+# Risk Taxonomy & Statistics
+
+Qorgau questions are organized into a two-level taxonomy of 6 High-Level Risk Areas and 17 Fine-Grained Harm Types.
+
+![Dataset Statistics](./img/stats.png)
+
+# Evaluation Results
+
+We evaluate 12 models spanning open-source and proprietary LLMs. Evaluation is performed using both automatic (GPT-4o) and human assessments. We analyze binary and fine-grained classification performance across three linguistic settings: Kazakh, Russian, and code-switched prompts.
+
+![Safety Rank](./img/safety_rank.png)
+
+## Risk Areas
+![Risk types unsafe vs safe answers distribution](./img/risk_areas.png)
+
+## Question Types
+![Question types unsafe vs safe answers distribution](./img/question_type.png)
+
+## Code-Switching Results
+![Code-switching subset results](./img/cs.png)
 
 
-## Automatic Translation and Localization
-- Based on the column: en_question in "data/data_zh-with-en-questions.csv"
-- Translate into Kazakh and Russian, add another two columns (xxx_translated_lanxxx_question)
-- Discuss with Nurkhan or Askhat for a good prompt to localize the translated questions, try on GPT-4o chat by some questions and then perform in batch
 
-## Manual Translation and Localization
-- Three annotators for each language will post-edit 3039 questions in [Google Sheet](https://docs.google.com/spreadsheets/d/1S7JAFW_9vwDJPM8YEAC-FbSNFisqXAbcuxDTY4tI3TU/edit?usp=sharing) for columns **human_kaz_annotated** and **human_ru_annotated**.
-- For each row, the first column shows the question type. i.e., three variants: original = harmful direct attack; task1-FN = harmful indirect attack; task2-FP = harmless questions with sensitive words.
-- en_question: translated English questions from Chinese Do-not-answer.
-- google_translated_language_question: Google translated questions to Russian and Kazakh.
-- gpt4o_ru_localized: Based on the google translations above, we prompt GPT-4o to perform the first step localization to reduce annotators' workload.
-
-### Annotation Guideline
-- **Grammar correction and native expression:** we should make sure the translation of a question is grammarly correct, and aligns with expression habits of native speakers, no translationese tone.
-  **Change name, organization and events **: some name, organization, events or scenarios may not fit local real situations, change them to fit local culture, tradition and events.
-  **Fit Question type requirement**: we should make sure the annotated question still belongs to its question type (first column): original, task1-FN and task2-FP.
-
-  During post-editing these questions, think about **what aspects are not included in current dataset, but they reflect region-specific sensitivity topics**, we will manually collect such questions in the next stage.
-
-
+<!-- 
 ## Dataset
 All data is saved in ```ru_kaz_data```
 
@@ -32,16 +33,16 @@ All data is saved in ```ru_kaz_data```
 - ru_kz_twelve_model_responses.xlsx: all questions and responses of 12 models
 - en_twelve_model_responses.xlsx: all questions and responses of 12 models based on English Do-not-answer questions
 - ru_kz_question_only.xlsx: questions only
-- eval_results: all input and output file of calling openai batch for automatically evaluating binary safety
-
+- eval_results: all input and output file of calling openai batch for automatically evaluating binary safety -->
+<!-- 
 
 ## Notebook and Code Description
 - ```evaluate_binary_safety.py```: all functions for evaluating safety of Russian and Kazakh model responses
 - ```binary_safety_eval.ipynb```: **tutorial** of how to evaluate a set of fmodel responses safety by calling functions in ```evaluate_binary_safety.py```.
 - ```eval_safety_for_twelve_models.ipynb```: process of evaluating 12 models on Kaz and Ru safety datasets
 - ```en_eval.ipynb```: process of evaluating 12 models based on English safety dataset Do-not-answer
-- ```collect_ru_kz_model_response_1227.ipynb```: test code for collect our own Kz model responses
-
+- ```collect_ru_kz_model_response_1227.ipynb```: test code for collect our own Kz model responses -->
+<!-- 
 ## Binary Safety Evaluation Results
 Current evaluation method achieved **88.1%** and **85.2%** accuracy for Russian and Kazakh binary safety evaluation. So we think it is reasonable to evaluate over all. Here is the results of nine models.
-![12 Model Safety Rank](image.png)
+![12 Model Safety Rank](./img/image.png) -->
