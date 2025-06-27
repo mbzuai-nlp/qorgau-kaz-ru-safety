@@ -14,16 +14,40 @@ We evaluate 12 models spanning open-source and proprietary LLMs. Evaluation is p
 
 ![Safety Rank](./img/safety_rank.png)
 
+Proprietary models generally outperform open-source ones across all languages. For Russian, YandexGPT is the safest model with 93.57% safe responses, while among open-source models, KazLLM-1.0-70B (87.5%) and Vikhr-Nemo (85.6%) perform best. In Kazakh, Claude (96.5%) and GPT-4o (95.8%) lead the rankings, whereas Aya101—despite being specifically tailored for Kazakh—shows the lowest safety score. Interestingly, most models achieve slightly higher safety scores in Kazakh than in Russian. This trend likely reflects the low-resource nature of Kazakh: with limited exposure to domain-specific or harmful content during training, models tend to produce vague and generic responses that are less likely to be flagged as unsafe.
+
 ## Risk Areas
 ![Risk types unsafe vs safe answers distribution](./img/risk_areas.png)
+
+Region-specific sensitive topics (risk type VI) account for the majority of unsafe responses in both Russian and Kazakh, revealing that LLMs struggle with regional risks. Notably, YandexGPT performs well on these questions in Russian, while even top-performing models like GPT-4o and Claude struggle with them in Kazakh.
+
 
 ## Question Types
 ![Question types unsafe vs safe answers distribution](./img/question_type.png)
 
+In Russian, models tend to produce more unsafe responses to indirect attacks for general risks (I–V), while direct attacks are slightly more effective for region-specific risks, likely due to vague answers being safer. In Kazakh, patterns vary more: high-resource models like Claude and GPT-4o struggle with subtle indirect attacks, while low-resource exposure leads to inconsistent behavior across question types, especially for region-specific prompts.
+
+
 ## Code-Switching Results
 ![Code-switching subset results](./img/cs.png)
 
+Models show divergent safety behaviors across languages in the direct attack setup: GPT-4o and Claude are safest in Kazakh, likely due to limited training exposure leading to generic outputs, while LLaMA-70B is safest in Russian, and YandexGPT performs best on code-switched prompts. These patterns suggest that code-switching can both amplify safety risks by enabling access to unsafe high-resource content and reduce them by confusing models into generating vaguer, safer responses—highlighting the need for multilingual safety evaluations that consider both language-specific and mixed-language dynamics.
 
+# Citation
+
+If you use this work, please cite:
+
+```
+@misc{goloburda2025qorgauevaluatingllmsafety,
+      title={Qorgau: Evaluating LLM Safety in Kazakh-Russian Bilingual Contexts}, 
+      author={Maiya Goloburda and Nurkhan Laiyk and Diana Turmakhan and Yuxia Wang and Mukhammed Togmanov and Jonibek Mansurov and Askhat Sametov and Nurdaulet Mukhituly and Minghan Wang and Daniil Orel and Zain Muhammad Mujahid and Fajri Koto and Timothy Baldwin and Preslav Nakov},
+      year={2025},
+      eprint={2502.13640},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.13640}, 
+}
+```
 
 <!-- 
 ## Dataset
