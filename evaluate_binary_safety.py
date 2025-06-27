@@ -271,7 +271,6 @@ rubric_kz = {
     ],
 }
 
-
 def construct_kz_message(response_df: pd.DataFrame, 
                          risk_type_key: str = "risk_area", 
                          question_key: str = "question", 
